@@ -9,7 +9,8 @@ This repository is composed by three components:
 *  **ui**
     *  [Vue.js](https://vuejs.org/) project to build the user interface. This project will be built and served as static files by frontendServer component.
 
-Only **backendServer** and **frontendServer** are going to be deployed to MindSphere.
+Only **backendServer** and **frontendServer** are going to be deployed to MindSphere. <br />
+[MindSphere Developer Official Documentation](https://developer.mindsphere.io/howto/howto-cloud-foundry/index.html)
 
 ## Requirements
 
