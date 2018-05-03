@@ -36,6 +36,14 @@ router.get('/appapi/test', function(req, res, next) {
   res.send("Hi, it's MindSphere");
 });
 ```
+Allow Cross Origin Access. Add the following in backendServer/app.js before any routing settings:
+```
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+```
 ### frontendServer
 Create Express application
 ```
@@ -57,4 +65,59 @@ router.get('*', function(req, res, next) {
 Create Vue application. To be compliant with Content Security Policies, choose *runtime only* as Vue build when promped during the application generation.
 ```
 vue init webpack ui
+```
+Install axios
+```
+cd ui
+npm install axios --save
+```
+In ui/src/App.vue replace the template with:
+```
+<template>
+  <div id="app">
+    <router-view/>
+  </div>
+</template>
+```
+In ui/src/components/HelloWorld.vue replace the template with:
+```
+<template>
+  <div class="hello">
+    <h1>{{ msg }}</h1>
+  </div>
+</template>
+```
+Import axios
+```
+import axios from 'axios'
+```
+Add *created* method
+```
+created: function () {
+    axios.get('http://localhost:3000/appapi/test')
+    .then(function (response) {
+      this.msg = response.data
+    }.bind(this))
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+```
+In ui/src/router/index.js replace the Router with:
+```
+export default new Router({
+  mode: 'history',
+  routes: [
+    {
+      path: '/',
+      name: 'HelloWorld',
+      component: HelloWorld
+    },
+    {
+      path: '/app/',
+      name: 'HelloWorld',
+      component: HelloWorld
+    }
+  ]
+})
 ```
