@@ -1,6 +1,7 @@
-# mindsphere-node-hello-world
+# MindSphere Hello World example in Node.js
 ## Description
-This is a hello world example application for Siemens MindSphere v3 platform. This example uses two CloudFoundry components written in Node.js. One component serves the application APIs and the other serves the UI. The UI component uses Vue.js FrontEnd Javascript framework.
+This is a hello world example application for Siemens MindSphere v3 platform. 
+This example uses two CloudFoundry components written in Node.js. One component serves the application APIs and the other serves the UI. The UI component uses Vue.js FrontEnd Javascript framework.
 
 ## Requirements:
 
