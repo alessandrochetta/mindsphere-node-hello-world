@@ -13,7 +13,10 @@ Only **backendServer** and **frontendServer** are going to be deployed to MindSp
 [MindSphere Developer Official Documentation](https://developer.mindsphere.io/howto/howto-cloud-foundry/index.html)
 
 ## Requirements
-
+*   Siemens MindSphere developer partnership
+*   [CloudFoundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
+*   [Node.js](https://nodejs.org/en/download/)
+*   [Vue.js](https://vuejs.org/v2/guide/installation.html#NPM)
 
 ```
 This is a code block
