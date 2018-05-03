@@ -54,19 +54,7 @@ router.get('*', function(req, res, next) {
 });
 ```
 ### ui
-Create Vue application
+Create Vue application. To be compliant with Content Security Policies, choose *runtime only* as Vue build when promped during the application generation.
 ```
-express frontendServer
-```
-Download and install the needed npm packages
-```
-cd frontendServer
-npm install
-```
-Add a route to in frontendServer/routes/index.js <br />
-It will serve the Vue single page application for every requested url
-```
-router.get('*', function(req, res, next) {
-  res.sendfile("public/index.html");
-});
+vue init webpack ui
 ```
