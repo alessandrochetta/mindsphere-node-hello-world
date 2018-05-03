@@ -16,8 +16,11 @@ Only **backendServer** and **frontendServer** are going to be deployed to MindSp
 *   Siemens MindSphere developer partnership
 *   [CloudFoundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
 *   [Node.js](https://nodejs.org/en/download/)
+*   [Express application generator](https://expressjs.com/en/starter/generator.html) *(optional)*
 *   [Vue.js](https://vuejs.org/v2/guide/installation.html#NPM)
 
+## Cheatsheet
+###backendServer creation creation
 ```
-This is a code block
+express backendServer
 ```
