@@ -1,6 +1,6 @@
 # MindSphere Hello World example in Node.js
 ## Description
-This is a hello world example application for Siemens MindSphere v3 platform. <br />
+This is a hello world example application for [Siemens MindSphere](https://www.siemens.com/global/en/home/products/software/mindsphere.html) v3 platform. <br />
 This repository is composed by three components:
 *  **backendServer**
     * [Node.js](https://nodejs.org/) server that exposes application APIs.
