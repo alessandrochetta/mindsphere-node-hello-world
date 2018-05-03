@@ -36,3 +36,37 @@ router.get('/appapi/test', function(req, res, next) {
   res.send("Hi, it's MindSphere");
 });
 ```
+### frontendServer
+Create Express application
+```
+express frontendServer
+```
+Download and install the needed npm packages
+```
+cd frontendServer
+npm install
+```
+Add a route to in frontendServer/routes/index.js <br />
+It will serve the Vue single page application for every requested url
+```
+router.get('*', function(req, res, next) {
+  res.sendfile("public/index.html");
+});
+```
+### ui
+Create Vue application
+```
+express frontendServer
+```
+Download and install the needed npm packages
+```
+cd frontendServer
+npm install
+```
+Add a route to in frontendServer/routes/index.js <br />
+It will serve the Vue single page application for every requested url
+```
+router.get('*', function(req, res, next) {
+  res.sendfile("public/index.html");
+});
+```
