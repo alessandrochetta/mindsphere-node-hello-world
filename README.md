@@ -20,7 +20,13 @@ Only **backendServer** and **frontendServer** are going to be deployed to MindSp
 *   [Vue.js](https://vuejs.org/v2/guide/installation.html#NPM)
 
 ## Cheatsheet
-### backendServer creation creation
+### backendServer
+Create Express application
 ```
 express backendServer
+```
+Download and install the needed npm packages
+```
+cd backendServer
+npm install
 ```
