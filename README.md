@@ -1,5 +1,5 @@
 # MindSphere Hello World example in Node.js
-## Description
+## Introduction
 This is a hello world example application for [Siemens MindSphere](https://www.siemens.com/global/en/home/products/software/mindsphere.html) v3 platform. <br />
 This repository is composed by three components:
 *  **backendServer**
@@ -137,4 +137,24 @@ export default new Router({
 In ui/package.json replace the build command with:
 ```
 "build": "node build/build.js && rm -rf ../frontendServer/public/static/ && cp -r dist/ ../frontendServer/public/"
+```
+## Deployment
+Go to the Vue project root directory and build the project
+```
+npm run build
+```
+Create an application from the MindSphere Launchpad > Developer Cockpit. <br />
+Create two components:
+*   backendserver
+    *   Cloud Foundry Direct URL: https://[yourCFComponent1].apps.eu1.mindsphere.io
+*   frontendserver
+    *   Cloud Foundry Direct URL: https://[yourCFComponent2].apps.eu1.mindsphere.io
+Perform the initial CF login ([guide](https://developer.mindsphere.io/howto/howto-cloud-foundry/index.html#connecting-to-cloud-foundry-via-cf-cli)) <br />
+Go to the backendServer project root directory and push the project to MindSphere
+```
+cf push [yourCFComponent1]
+```
+Go to the frontendServer project root directory and push the project to MindSphere
+```
+cf push [yourCFComponent2]
 ```
