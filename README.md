@@ -149,6 +149,7 @@ Create two components:
     *   Cloud Foundry Direct URL: https://[yourCFComponent1].apps.eu1.mindsphere.io
 *   frontendserver
     *   Cloud Foundry Direct URL: https://[yourCFComponent2].apps.eu1.mindsphere.io
+
 Perform the initial CF login ([guide](https://developer.mindsphere.io/howto/howto-cloud-foundry/index.html#connecting-to-cloud-foundry-via-cf-cli)) <br />
 Go to the backendServer project root directory and push the project to MindSphere
 ```
