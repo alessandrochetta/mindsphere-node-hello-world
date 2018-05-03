@@ -30,3 +30,9 @@ Download and install the needed npm packages
 cd backendServer
 npm install
 ```
+Add a route to in backendServer/routes/index.js
+```
+router.get('/appapi/test', function(req, res, next) {
+  res.send("Hi, it's MindSphere");
+});
+```
