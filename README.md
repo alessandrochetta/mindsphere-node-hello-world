@@ -30,7 +30,11 @@ Download and install the needed npm packages
 cd backendServer
 npm install
 ```
-Add a route to in backendServer/routes/index.js
+Exlude node_modules folder during CloudFoundry deployment
+```
+echo "node_modules" > .cfignore
+```
+Add a test route in backendServer/routes/index.js
 ```
 router.get('/appapi/test', function(req, res, next) {
   res.send("Hi, it's MindSphere");
@@ -54,15 +58,19 @@ Download and install the needed npm packages
 cd frontendServer
 npm install
 ```
+Exlude node_modules folder during CloudFoundry deployment
+```
+echo "node_modules" > .cfignore
+```
 Add a route to in frontendServer/routes/index.js <br />
-It will serve the Vue single page application for every requested url
+It will serve the Vue single page application for any requested url
 ```
 router.get('*', function(req, res, next) {
   res.sendfile("public/index.html");
 });
 ```
 ### ui
-Create Vue application. To be compliant with Content Security Policies, choose *runtime only* as Vue build when promped during the application generation.
+Create Vue application. To be compliant with Content Security Policies, choose *runtime only* as Vue build when prompted during the application generation.
 ```
 vue init webpack ui
 ```
@@ -93,8 +101,12 @@ import axios from 'axios'
 ```
 Add *created* method
 ```
-created: function () {
-    axios.get('http://localhost:3000/appapi/test')
+ created: function () {
+    var url = '/appapi/test'
+    if (process.env.NODE_ENV == 'development') {
+      url = 'http://localhost:3000/appapi/test'
+    }
+    axios.get(url)
     .then(function (response) {
       this.msg = response.data
     }.bind(this))
@@ -102,6 +114,7 @@ created: function () {
       console.log(error);
     });
   }
+}
 ```
 In ui/src/router/index.js replace the Router with:
 ```
@@ -120,4 +133,8 @@ export default new Router({
     }
   ]
 })
+```
+In ui/package.json replace the build command with:
+```
+"build": "node build/build.js && rm -rf ../frontendServer/public/static/ && cp -r dist/ ../frontendServer/public/"
 ```
