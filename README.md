@@ -10,7 +10,7 @@ This repository is composed by three components:
     *  [Vue.js](https://vuejs.org/) project to build the user interface. This project will be built and served as static files by frontendServer component.
 
 Only **backendServer** and **frontendServer** are going to be deployed to MindSphere. <br />
-[MindSphere Developer Official Documentation](https://developer.mindsphere.io/howto/howto-cloud-foundry/index.html)
+[MindSphere Developer Official Documentation](https://developer.mindsphere.io/howto/index.html)
 
 ## Requirements
 *   Siemens MindSphere developer partnership
@@ -150,7 +150,7 @@ Create two components:
 *   frontendserver
     *   Cloud Foundry Direct URL: https://[yourCFComponent2].apps.eu1.mindsphere.io
 
-Perform the initial CF login ([guide](https://developer.mindsphere.io/howto/howto-cloud-foundry/index.html#connecting-to-cloud-foundry-via-cf-cli)) <br />
+Perform the initial CF login ([guide](https://developer.mindsphere.io/howto/howto-cf-running-app.html#deploy-the-application-to-cloud-foundry-via-cf-cli)) <br />
 Go to the backendServer project root directory and push the project to MindSphere
 ```
 cf push [yourCFComponent1]
